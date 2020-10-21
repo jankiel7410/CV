@@ -29,7 +29,8 @@ jobs:
       - run: npm test
         env:
           CI: true
-      - uses: actions/upload_articact@v2
+      - uses: actions/upload-artifact@v2.2.0
         with:
           name: dist
           path: ./dist/
+
