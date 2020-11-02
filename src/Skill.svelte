@@ -3,36 +3,41 @@
     import { tweened } from 'svelte/motion'
     export let name: string
     export let level: number
-    export let className: string
 
-    let tweenedLevel = tweened(1, {duration: 2000, easing: quadOut})
+    let tweenedLevel = tweened(0, {duration: 2000, easing: quadOut})
     $tweenedLevel = level
-    $: d = `M 1,0.5 ${([1,2,3,4,5]).slice(0, Math.floor($tweenedLevel)).map(v => 'H ' + v).join(' ')} H ${$tweenedLevel}`
-    $: wat = 0
+
+    $: circumference = 2 * 5 * Math.PI
+
 </script>
 
 
-<div class={`grid grid-cols-2 gap-2 w-full ${className}`}>
-    <span class='m-auto text-lg'>{name}</span>
-    <!-- <svg class='max-w-sm' viewBox="0 0 6 1" fill="yellow"> -->
-    <svg class='max-w-sm' viewBox="0 0 10 10" fill="none">
-        <defs>
-            <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0%" stop-color="#ff00cc" />
-                <stop offset="100%" stop-color="#333399"/>
-            </linearGradient>
-            <!-- <marker id="mark" markerWidth="2" markerHeight="2" refX="1" refY="1">
-                <circle cx="1" cy="1" r="1" stroke="none" fill="#00f"/>
-            </marker> -->
-        </defs>
-        <!-- <path {d} stroke="url(#gradient)" stroke-width="0.1" fill="none" stroke-linecap="round" marker-mid="url(#mark)" /> -->
-        <circle cx="50%" cy="50%" stroke="lightgray" stroke-width="0.1"/>
-        <circle cx="50%" cy="50%" stroke="red" stroke-linecap="round" stroke-width="0.1"/>
-    </svg>
+<div class='grid grid-cols-2 gap-2'>
+    <span class='m-auto text-lg m-auto'>{name}</span>
+    <div class='relative'>
+        <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet">
+            <circle cx="50%" cy="50%" r="5" fill="none" stroke="lightgray" stroke-width="0.2"
+                stroke-dasharray={circumference}
+                stroke-dashoffset={`${circumference * 1/3}`}/>
+            <circle cx="50%" cy="50%" r="5" fill="none" stroke="red" stroke-linecap="round"
+            stroke-dasharray={circumference}
+            stroke-dashoffset={`${circumference - ($tweenedLevel / 5 * circumference * 2/3)}`}
+            stroke-width="1"/>
+        </svg>    
+        <span class="absolute top-1/2 left-1/2">{$tweenedLevel.toFixed(1)}</span>
+    </div>
 </div>
 
 <style>
     div {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    span.absolute {
+        transform: translate(-50%, -50%);
+    }
+    svg {
+        transform: rotate(-210deg);
+        max-width: 5em;
+        margin: auto;
     }
 </style>

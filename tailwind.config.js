@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: ["./src/**/*.svelte", "./src/**/*.html"],
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        '1/2': '50%'
+      }
+    },
   },
   variants: {},
   plugins: [],
