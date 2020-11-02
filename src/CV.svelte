@@ -12,26 +12,31 @@
     </header>
     <aside class='grid grid-cols-1 auto-rows-min gap-8'>
         <div>
+            <p>📪 michal.cymbalista@pm.me</p>
+            <p>📍 Wroclaw, Poland</p>
+        </div>
+        <div>
             <Header>
                 Profile Summary
             </Header>
             <p class="text-lg text-gray-900 mt-1 text-justify">
                 A full-stack developer based in Wroclaw, Poland.<br>
                 Passionate about everything related to web &ndash; frontend, backend and a fair bit of DevOps as well. 😎<br>
-                Tech geek interested in emerging technologies and their applications impacting our daily life. 💻
-                Proud owner of a cat, Inka. 🐈<br>
-            </p>    
+                Tech geek interested in emerging technologies and their applications impacting our daily life.
+                Proud owner of a siberian cat Inka. 🐈<br>
+            </p>
         </div>
         <div>
             <Header>Skills</Header>
-            <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 print:grid-cols-3">
+            <div class="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-2 print:grid-cols-4">
                 <Skill name='Python' level={4.5} />
-                <Skill name='JavaScript' level={4} />
-                <Skill name='Typescript' level={3.5} />
+                <Skill name='Typescript' level={4} />
                 <Skill name='ReactJS' level={4} />
                 <Skill name='Svelte' level={2.5} />
                 <Skill name='PostgreSQL' level={3} />
                 <Skill name='AWS' level={4} />
+                <Skill name='English' level={4} label='B2+' />
+                <Skill name='Teamwork' level={5} label='🚀' />
             </div>
             
         </div>
@@ -120,8 +125,8 @@
     </ol>
 </main>
 
-<footer class='container mx-8 sm:mx-auto my-8 border-t border-gray-400 text-sm italic text-gray-600'>
-    <p class='mt-2'>
+<footer class='container px-8 sm:px-auto text-justify text-sm italic text-gray-600'>
+    <p class='mt-2 border-t border-gray-400'>
         I agree to the processing of personal data provided in this document for realising the recruitment process
         pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
         Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of
@@ -156,7 +161,7 @@
         grid-area: content;
     }
     
-    @media (min-width: 640px), print {
+    @media (min-width: 640px) {
         main {
             display: grid;
             grid-template:
