@@ -1,36 +1,40 @@
 <script lang="ts">
     import ExpEntry from './ExpEntry.svelte'
+    import Header from './Header.svelte'
     import Skill from './Skill.svelte'
     import Entry from './Entry.svelte'
 </script>
 
-<main class='container mx-auto mt-4 px-4 relative'>
+<main class='container mx-auto mt-4 px-4 relative gap-4 sm:gap-8'>
     <header>
         <h1 class='text-4xl sm:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
         <h2 class='text-2xl sm:text-4xl mt-2 text-gray-700 font-light'>Full-Stack Developer</h2>
     </header>
-    <aside>
-        <h3 class="text-2xl text-gray-800 border-solid border-b-2 border-teal-600">
-            Profile Summary
-        </h3>
-        <p class="text-lg text-gray-900 mt-3 text-justify">
-            A full-stack developer based in Wroclaw, Poland.
-            Passionate about everything related to web &ndash; frontend, backend and a fair bit of DevOps as well. 😎
-            Tech geek interested in emerging technologies and their applications impacting our daily life. 💻
-            Proud owner of a cat, Inka. 🐈
-        </p>
-
-        <h3 class="text-2xl mt-4 text-gray-800 border-solid border-b-2 border-teal-600">Skills</h3>
-        <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2">
-            <Skill name='Python' level={4.5} />
-            <Skill name='JavaScript' level={4.5} />
-            <Skill name='Typescript' level={4} />
-            <Skill name='ReactJS' level={4} />
-            <Skill name='PostgreSQL' level={3} />
-            <Skill name='AWS' level={4} />
-            <Skill name='Node.JS' level={2} />
+    <aside class='grid grid-cols-1 auto-rows-min gap-8'>
+        <div>
+            <Header>
+                Profile Summary
+            </Header>
+            <p class="text-lg text-gray-900 mt-1 text-justify">
+                A full-stack developer based in Wroclaw, Poland.<br>
+                Passionate about everything related to web &ndash; frontend, backend and a fair bit of DevOps as well. 😎<br>
+                Tech geek interested in emerging technologies and their applications impacting our daily life. 💻
+                Proud owner of a cat, Inka. 🐈<br>
+            </p>    
         </div>
-        
+        <div>
+            <Header>Skills</Header>
+            <div class="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 print:grid-cols-3">
+                <Skill name='Python' level={4.5} />
+                <Skill name='JavaScript' level={4} />
+                <Skill name='Typescript' level={3.5} />
+                <Skill name='ReactJS' level={4} />
+                <Skill name='Svelte' level={2.5} />
+                <Skill name='PostgreSQL' level={3} />
+                <Skill name='AWS' level={4} />
+            </div>
+            
+        </div>
     </aside>
 
     <ol>
@@ -104,42 +108,41 @@
             </ExpEntry>
             <ExpEntry>
                 <p slot="desc">
-                    Online game store.<br>
+                    An online game store.<br>
                     Bugfixing and developing new features.<br>
                 </p>
                     <li>Python</li>
                     <li>Django, Nginx;</li>
-                    <li>Jinja2, JQuery 😎, LESS</li>
+                    <li>Jinja2, JQuery, LESS</li>
                     <li>MySQL, Solr</li>
             </ExpEntry>
         </Entry>
     </ol>
 </main>
 
+<footer class='container mx-auto my-8 border-t border-gray-400 text-sm italic text-gray-600'>
+    <p class='mt-2'>
+        I agree to the processing of personal data provided in this document for realising the recruitment process
+        pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
+        Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of
+        natural persons with regard to the processing of personal data and on the free movement of such data, and repealing
+        Directive 95/46/EC (General Data Protection Regulation).
+    </p>
+    <p class='my-2'>
+        I also consent to processing of my personal data for the purposes of any future recruitment processes.
+    </p>
+</footer>
+
 <style>
-    @page {
-        size: A4;
-    }
     main {
         display: block;
         display: grid;
-            gap: 1rem;
-            grid-template:
+        grid-template:
             "header" auto
             "bio" auto
-            "content" auto / 1fr;
+            "content" auto
+            "footer" auto / 1fr;
         
-    }
-    
-    @media (min-width: 640px) {
-        main {
-            display: grid;
-            gap: 2rem;
-            grid-template:
-            "header break content" auto
-            "bio break content" 1fr
-            "bio break content" max-content / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
-        }
     }
 
     main>header {
@@ -149,8 +152,22 @@
     main>aside {
         grid-area: bio;
     }
+    footer {
+        grid-area: footer;
+    }
 
     main>ol {
         grid-area: content;
+    }
+    
+    @media (min-width: 640px) {
+        main {
+            display: grid;
+            grid-template:
+            "header break content" auto
+            "bio break content" 1fr
+            "bio break content" max-content
+            "footer footer footer" auto / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
+        }
     }
 </style>

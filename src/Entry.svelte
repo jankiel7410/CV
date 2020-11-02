@@ -1,4 +1,5 @@
 <script lang='ts'>
+    import Header from './Header.svelte'
     export let company: string
     export let timespan: string
     export let role: string
@@ -6,10 +7,10 @@
 </script>
 
 <li role="article">
-    <h3 class="text-2xl text-gray-700 font-medium border-solid border-b-2 border-teal-600">
+    <Header>
         <time class='text-gray-600 font-light'>{timespan}</time>
         {company}
-    </h3>
+    </Header>
     <h4 class='text-xl text-gray-800 font-bold mt-3'>
         {role}
     </h4>
