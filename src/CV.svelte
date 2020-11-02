@@ -81,7 +81,7 @@
                         Alexa integration for a smart oven and infrastructure optimizations for handling more users while being more cost effective. <br>
                         I was responsible for developing new features for the integration, load testing, writing proposals for enhancements and implementing them.
                         <li>Python2</li>
-                        <li>Tornado; ELK Stack; Graphana</li>
+                        <li>Tornado; ELK Stack; Grafana</li>
                         <li>AWS EC2, Lambda, DynamoDB, Kinesis, ElastiCache (Redis)</li>
                         <li>MZBench; locust</li>
                 </ExpEntry>
