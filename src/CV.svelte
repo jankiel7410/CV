@@ -12,7 +12,7 @@
     </header>
     <aside class='grid grid-cols-1 auto-rows-min gap-8'>
         <div>
-            <p>📪 michal.cymbalista@pm.me</p>
+            <p><a href="mailto:michal.cymbalista@pm.me">📪 michal.cymbalista@pm.me</a></p>
             <p>📍 Wroclaw, Poland</p>
         </div>
         <div>
@@ -125,7 +125,7 @@
     </ol>
 </main>
 
-<footer class='container px-8 sm:px-auto text-justify text-sm italic text-gray-600'>
+<footer class='container px-8 mx-auto text-justify text-sm italic text-gray-600'>
     <p class='mt-2 border-t border-gray-400'>
         I agree to the processing of personal data provided in this document for realising the recruitment process
         pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
@@ -161,7 +161,7 @@
         grid-area: content;
     }
     
-    @media (min-width: 640px) {
+    @media screen and (min-width: 640px) {
         main {
             display: grid;
             grid-template:
@@ -170,4 +170,11 @@
             "bio break content" max-content / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
         }
     }
+
+	li {
+        position: relative;
+        -webkit-column-break-inside: avoid;
+	    break-inside: avoid;
+    }
+
 </style>
