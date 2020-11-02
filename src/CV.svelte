@@ -120,7 +120,7 @@
     </ol>
 </main>
 
-<footer class='container mx-auto my-8 border-t border-gray-400 text-sm italic text-gray-600'>
+<footer class='container mx-8 sm:mx-auto my-8 border-t border-gray-400 text-sm italic text-gray-600'>
     <p class='mt-2'>
         I agree to the processing of personal data provided in this document for realising the recruitment process
         pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
@@ -140,8 +140,7 @@
         grid-template:
             "header" auto
             "bio" auto
-            "content" auto
-            "footer" auto / 1fr;
+            "content" auto / 1fr;
         
     }
 
@@ -152,22 +151,18 @@
     main>aside {
         grid-area: bio;
     }
-    footer {
-        grid-area: footer;
-    }
 
     main>ol {
         grid-area: content;
     }
     
-    @media (min-width: 640px) {
+    @media (min-width: 640px), print {
         main {
             display: grid;
             grid-template:
             "header break content" auto
             "bio break content" 1fr
-            "bio break content" max-content
-            "footer footer footer" auto / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
+            "bio break content" max-content / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
         }
     }
 </style>
