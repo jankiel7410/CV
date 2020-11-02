@@ -56,7 +56,7 @@
                         <li>Python3; Cython; Rust</li>
                         <li>Flask; Nginx</li>
                         <li>SQLAlchemy; PostgreSQL, ElasticSearch</li>
-                        <li>Docker; AWS ECS, S3, RDS, CW, Lambda, SQS, etc.</li>
+                        <li>Docker; AWS ECS, S3, RDS, CW, Lambda, SQS, SES, etc.</li>
                 </ExpEntry>
                 <ExpEntry>
                     <p slot="desc">
@@ -128,13 +128,10 @@
                         Online game shop.<br>
                         Maintained .<br>
                     </p>
-                        <li>JavaScript</li>
-                        <li>VueJS; Vuex; SASS</li>
                         <li>Python</li>
-                        <li>Django; Flask; Nginx; gevent</li>
-                        <li></li>
-                        <li>PostgreSQL; Solr; Redis</li>
-                        <li>AWS EC2, S3, RDS, CW, etc.</li>
+                        <li>Django; Nginx;</li>
+                        <li>JQuery 😎</li>
+                        <li>MySQL; Solr</li>
                 </ExpEntry>
             </ul>
         </li>

@@ -5,21 +5,10 @@
     export let level: number
     export let className: string
 
-    function polarToCartesian(cx: number, cy, radius, angle) {
-        const radians = (angle - 90) * Math.PI / 180.0;
-        return [Math.round((cx + (radius * Math.cos(radians))) * 100) / 100, Math.round((cy + (radius * Math.sin(radians))) * 100) / 100];
-    }
-
-  function svgArcPath(x, y, radius, start_angle, end_angle) {
-        const start_xy = polarToCartesian(x, y, radius, end_angle);
-        const end_xy = polarToCartesian(x, y, radius, start_angle);
-        return "M " + start_xy[0] + " " + start_xy[1] + " A " + radius + " " + radius + " 0 0 0 " + end_xy[0] + " " + end_xy[1];
-    }
-
     let tweenedLevel = tweened(1, {duration: 2000, easing: quadOut})
     $tweenedLevel = level
     $: d = `M 1,0.5 ${([1,2,3,4,5]).slice(0, Math.floor($tweenedLevel)).map(v => 'H ' + v).join(' ')} H ${$tweenedLevel}`
-    $: wat = svgArcPath(5, 5, 3, -100, 200 * $tweenedLevel/5 - 100)
+    $: wat = 0
 </script>
 
 
@@ -37,7 +26,8 @@
             </marker> -->
         </defs>
         <!-- <path {d} stroke="url(#gradient)" stroke-width="0.1" fill="none" stroke-linecap="round" marker-mid="url(#mark)" /> -->
-        <path d={wat} stroke="red" stroke-linecap="round" stroke-width="0.1"/>
+        <circle cx="50%" cy="50%" stroke="lightgray" stroke-width="0.1"/>
+        <circle cx="50%" cy="50%" stroke="red" stroke-linecap="round" stroke-width="0.1"/>
     </svg>
 </div>
 
