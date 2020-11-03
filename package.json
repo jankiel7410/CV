@@ -2,7 +2,7 @@
   "name": "todo-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run build:tailwind && rollup -c",
+    "build": "rollup -c --environment NODE_ENV:production",
     "dev": "rollup -c -w",
     "start": "sirv public",
     "validate": "svelte-check"

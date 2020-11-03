@@ -47,7 +47,7 @@ export default {
 				css.write('bundle.css');
 			},
 			// emitCss: true,
-			preprocess: sveltePreprocess(),
+			preprocess: sveltePreprocess({ postcss: true, typescript: true }),
 		}),
 
 		// If you have external dependencies installed from

@@ -1,10 +1,11 @@
 <script lang="ts">
+    import Tailwind from './Tailwind.svelte'
     import ExpEntry from './ExpEntry.svelte'
     import Header from './Header.svelte'
     import Skill from './Skill.svelte'
     import Entry from './Entry.svelte'
 </script>
-
+<Tailwind />
 <main class='container mx-auto mt-4 px-4 relative grid gap-4 md:gap-8 overflow-visible print:block'>
     <header>
         <h1 class='text-4xl md:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
