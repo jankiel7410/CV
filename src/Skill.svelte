@@ -19,11 +19,11 @@
                 stroke-dasharray={circumference}
                 stroke-dashoffset={`${circumference * 1/3}`}/>
             <circle cx="50%" cy="50%" r="5" fill="none"
-                stroke="#327af9"
+                stroke="#60ce9a"
                 stroke-linecap="round"
                 stroke-dasharray={circumference}
                 stroke-dashoffset={`${circumference - ($tweenedLevel / 5 * circumference * 2/3)}`}
-                stroke-width="1"/>
+                stroke-width="0.8"/>
         </svg>    
         <span class="absolute top-1/2 left-1/2 text-xl font-slim">{label ?? $tweenedLevel.toFixed(1)}</span>
     </div>
@@ -38,12 +38,5 @@
         transform: rotate(-210deg);
         max-width: 5em;
         margin: auto;
-    }
-    circle {
-        background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        background-size: auto;
     }
 </style>

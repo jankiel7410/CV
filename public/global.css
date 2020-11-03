@@ -17,10 +17,17 @@ h1, h2, h3, h4 {
 	size: A4;
 }
 
-@media (print) {
-	html, body {
-		font-size: 8pt;
+@media print {
+	html {
+		font-size: 10pt;
 		position: relative;
 		overflow: visible;
 	}
+}
+
+.break-before {
+	break-before: always;
+}
+.break-after {
+	break-after: always;
 }

@@ -5,7 +5,7 @@
     import Entry from './Entry.svelte'
 </script>
 
-<main class='container mx-auto mt-4 px-4 relative gap-4 md:gap-8 overflow-visible'>
+<main class='container mx-auto mt-4 px-4 relative grid gap-4 md:gap-8 overflow-visible print:block'>
     <header>
         <h1 class='text-4xl md:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
         <h2 class='text-2xl md:text-4xl mt-2 text-gray-700 font-light'>Full-Stack Developer</h2>
@@ -28,13 +28,13 @@
         </div>
         <div>
             <Header>Skills</Header>
-            <div class="grid grid-cols-2 gap-8 mt-4 md:grid-cols-2 print:grid-cols-4">
+            <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 print:grid-cols-4">
                 <Skill name='Python' level={4.5} />
                 <Skill name='Typescript' level={4} />
                 <Skill name='ReactJS' level={4} />
                 <Skill name='Svelte' level={2.5} />
                 <Skill name='PostgreSQL' level={3} />
-                <Skill name='AWS' level={4} />
+                <Skill name='AWS' level={3.5} />
                 <Skill name='English' level={4} label='B2+' />
                 <Skill name='Teamwork' level={5} label='🚀' />
             </div>
@@ -140,8 +140,6 @@
 
 <style>
     main {
-        display: block;
-        display: grid;
         grid-template:
             "header" auto
             "bio" auto
@@ -160,7 +158,7 @@
     main>ol {
         grid-area: content;
     }
-    
+
     @media screen and (min-width: 768px) {
         main {
             display: grid;
@@ -176,6 +174,10 @@
             width: 100%;
             height: 100%;
             overflow: visible;
+        }
+
+        .grid.print\:block > *+* {
+            margin-top: 2rem;
         }
     }
 
