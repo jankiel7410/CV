@@ -18,7 +18,12 @@ h1, h2, h3, h4 {
 }
 
 @media (print) {
-	html {
+	html, body {
 		font-size: 8pt;
+		position: relative;
+		overflow: visible;
+	}
+	.no-break {
+		page-break-inside: avoid;
 	}
 }

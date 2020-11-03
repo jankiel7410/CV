@@ -5,13 +5,13 @@
     import Entry from './Entry.svelte'
 </script>
 
-<main class='container mx-auto mt-4 px-4 relative gap-4 sm:gap-8'>
+<main class='container mx-auto mt-4 px-4 relative gap-4 md:gap-8 overflow-visible'>
     <header>
-        <h1 class='text-4xl sm:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
-        <h2 class='text-2xl sm:text-4xl mt-2 text-gray-700 font-light'>Full-Stack Developer</h2>
+        <h1 class='text-4xl md:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
+        <h2 class='text-2xl md:text-4xl mt-2 text-gray-700 font-light'>Full-Stack Developer</h2>
     </header>
     <aside class='grid grid-cols-1 auto-rows-min gap-8'>
-        <div>
+        <div>   
             <p><a href="mailto:michal.cymbalista@pm.me">📪 michal.cymbalista@pm.me</a></p>
             <p>📍 Wroclaw, Poland</p>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div>
             <Header>Skills</Header>
-            <div class="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-2 print:grid-cols-4">
+            <div class="grid grid-cols-2 gap-8 mt-4 md:grid-cols-2 print:grid-cols-4">
                 <Skill name='Python' level={4.5} />
                 <Skill name='Typescript' level={4} />
                 <Skill name='ReactJS' level={4} />
@@ -104,12 +104,12 @@
                     News article reader with social network and cloud storage mixed in.<br>
                     Developed features both in the frontend and the backend.<br>
                 </p>
-                    <li>JavaScript</li>
-                    <li>VueJS, Vuex, SASS</li>
-                    <li>Python</li>
-                    <li>Django, Flask, Nginx, gevent</li>
-                    <li>PostgreSQL, Solr, Redis</li>
-                    <li>AWS EC2, S3, RDS, CW, etc.</li>
+                <li class='no-break'>JavaScript</li>
+                <li class='no-break'>VueJS, Vuex, SASS</li>
+                <li class='no-break'>Python</li>
+                <li class='no-break'>Django, Flask, Nginx, gevent</li>
+                <li class='no-break'>PostgreSQL, Solr, Redis</li>
+                <li class='no-break'>AWS EC2, S3, RDS, CW, etc.</li>
             </ExpEntry>
             <ExpEntry>
                 <p slot="desc">
@@ -126,7 +126,7 @@
 </main>
 
 <footer class='container px-8 mx-auto text-justify text-sm italic text-gray-600'>
-    <p class='mt-2 border-t border-gray-400'>
+    <p class='pt-2 border-t border-gray-400'>
         I agree to the processing of personal data provided in this document for realising the recruitment process
         pursuant to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
         Regulation (EU) 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of
@@ -161,20 +161,27 @@
         grid-area: content;
     }
     
-    @media screen and (min-width: 640px) {
+    @media screen and (min-width: 768px) {
         main {
             display: grid;
             grid-template:
             "header break content" auto
             "bio break content" 1fr
-            "bio break content" max-content / min(40vw, 25em) 0.5rem minmax(min-content, 40em);
+            "bio break content" max-content / minmax(20%, 40%) 0.5rem 2fr;
         }
     }
 
-	li {
-        position: relative;
-        -webkit-column-break-inside: avoid;
-	    break-inside: avoid;
+	@media print {
+        main {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+        li+li { /* fixme */
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
     }
 
 </style>
