@@ -10,7 +10,7 @@
         <h1 class='text-4xl md:text-6xl font-hairline leading-none'>Michał Cymbalista</h1>
         <h2 class='text-2xl md:text-4xl mt-2 text-gray-700 font-light'>Full-Stack Developer</h2>
     </header>
-    <aside class='grid grid-cols-1 auto-rows-min gap-8'>
+    <aside class='grid grid-cols-1 auto-rows-min gap-8 print:block'>
         <div>   
             <p><a href="mailto:michal.cymbalista@pm.me">📪 michal.cymbalista@pm.me</a></p>
             <p>📍 Wroclaw, Poland</p>
@@ -176,11 +176,6 @@
             width: 100%;
             height: 100%;
             overflow: visible;
-        }
-        li+li { /* fixme */
-            -webkit-column-break-inside: avoid;
-            page-break-inside: avoid;
-            break-inside: avoid;
         }
     }
 
