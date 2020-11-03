@@ -98,7 +98,7 @@
             </ExpEntry>
         </Entry>
         
-        <Entry company='Techland' timespan='03.2015 &mdash; 01.2018' role='Full-Stack Engineer' sub='Techland is one of the biggest video game companies in Poland.'>
+        <Entry company='Techland' timespan='02.2015 &mdash; 01.2018' role='Full-Stack Engineer' sub='Techland is one of the biggest video game companies in Poland.'>
             <ExpEntry>
                 <p slot="desc">
                     News article reader with social network and cloud storage mixed in.<br>
