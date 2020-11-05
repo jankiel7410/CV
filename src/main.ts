@@ -1,8 +1,8 @@
-import App from './App.svelte';
-import CV from './CV.svelte';
+import App from './App.svelte'
+import CV from './CV.svelte'
 
 const app = new CV({
-	target: document.body
-});
+  target: document.body,
+})
 
-export default app;
+export default app

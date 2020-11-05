@@ -7,10 +7,7 @@
 </script>
 
 <li role="article">
-  <Header>
-    <time class="text-gray-600 font-light">{timespan}</time>
-    {company}
-  </Header>
+  <Header><time class="text-gray-600 font-light">{timespan}</time> {company}</Header>
   <h4 class="text-xl text-gray-800 font-bold mt-3">{role}</h4>
   <p class="mt-1 text-gray-700 italic">{sub}</p>
   <slot />

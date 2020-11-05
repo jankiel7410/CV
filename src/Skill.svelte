@@ -10,7 +10,7 @@
   $: circumference = 2 * 5 * Math.PI
 </script>
 
-<div class='text-gray-900'>
+<div class="text-gray-900">
   <div class="relative">
     <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet">
       <circle
@@ -33,8 +33,7 @@
         stroke-dashoffset={`${circumference - (($tweenedLevel / 5) * circumference * 2) / 3}`}
         stroke-width="0.8" />
     </svg>
-    <span
-      class="absolute top-1/2 left-1/2 text-xl font-slim">{label ?? $tweenedLevel.toFixed(1)}</span>
+    <span class="absolute top-1/2 left-1/2 text-xl font-slim">{label ?? $tweenedLevel.toFixed(1)}</span>
   </div>
   <div class="text-lg text-center transform -translate-y-4">{name}</div>
 </div>

@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "personal-page",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c --environment NODE_ENV:production",
@@ -38,6 +38,9 @@
   "dependencies": {
     "sirv-cli": "^1.0.0",
     "tailwindcss": "^1.9.5"
+  },
+  "lint-staged": {
+    "*": "npx prettier --write"
   },
   "husky": {
     "hooks": {

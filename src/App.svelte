@@ -48,13 +48,7 @@
 
 <style>
   .python {
-    background: linear-gradient(
-      -193deg,
-      #f9c566 0%,
-      #f9c566 50%,
-      #5395ca 50%,
-      #5395ca
-    );
+    background: linear-gradient(-193deg, #f9c566 0%, #f9c566 50%, #5395ca 50%, #5395ca);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
