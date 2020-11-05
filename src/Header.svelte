@@ -4,3 +4,9 @@
   <span class="flex-grow-0 border-teal-600"><slot /></span>
   <div class="ml-2 my-auto flex-grow border-b border-teal-600" />
 </h2>
+
+<style>
+  h2 {
+    break-after: avoid;
+  }
+</style>

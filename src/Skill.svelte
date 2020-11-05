@@ -1,6 +1,7 @@
 <script lang="ts">
   import { quadOut } from 'svelte/easing'
   import { tweened } from 'svelte/motion'
+  import { onMount, onDestroy } from 'svelte'
   export let name: string
   export let level: number
   export let label: string = null
@@ -8,6 +9,13 @@
   $tweenedLevel = level
 
   $: circumference = 2 * 5 * Math.PI
+  const onPrint = () => tweenedLevel.set(level, {duration: 0})
+  onMount(() => {
+    window.addEventListener('beforeprint', onPrint)
+  })
+  onDestroy(() => {
+    window.removeEventListener('beforeprint', onPrint)
+  })
 </script>
 
 <div class="text-gray-900">

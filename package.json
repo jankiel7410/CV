@@ -13,6 +13,7 @@
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-typescript": "^6.0.0",
     "@tsconfig/svelte": "^1.0.0",
+    "@types/twemoji": "^12.1.1",
     "autoprefixer": "^9.0.0",
     "cross-env": "^7.0.2",
     "cssnano": "^4.1.10",
@@ -37,7 +38,8 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "tailwindcss": "^1.9.5"
+    "tailwindcss": "^1.9.5",
+    "twemoji": "^13.0.1"
   },
   "lint-staged": {
     "*": "npx prettier --write"

@@ -5,12 +5,12 @@
   import Header from './Header.svelte'
   import Skill from './Skill.svelte'
   import Entry from './Entry.svelte'
-import OrgHeader from './OrgHeader.svelte'
+  import emoji from './emoji'
 </script>
 
 <Tailwind />
 <main class="container mx-auto mt-4 px-4 relative grid gap-4 md:gap-8 overflow-visible print:block">
-  <header>
+  <header use:emoji>
     <h1 class="text-4xl md:text-6xl font-hairline leading-none">Michał Cymbalista</h1>
     <h2 class="text-2xl md:text-4xl mt-2 text-gray-700 font-light">Full-Stack Developer</h2>
     <div class='my-4'>
@@ -22,15 +22,15 @@ import OrgHeader from './OrgHeader.svelte'
       <Header>Profile Summary</Header>
       <p class="text-lg text-gray-900 mt-1 text-justify">
         A full-stack developer based in Wroclaw, Poland.<br />
-        Passionate about everything related to web &ndash; frontend, backend and a fair bit of DevOps as well. 😎<br />
+        Passionate about everything related to web &ndash; frontend, backend and a bit of DevOps as well. 😎<br />
         Tech geek interested in emerging technologies and their applications impacting our daily life. Proud owner of a
-        siberian cat Inka. 🐈<br />
+        siberian cat Inka. 🐈
       </p>
     </div>
   </header>
   <div>
     <Header>Career</Header>
-    <ol>
+    <ol class='space-y-6'>
       <Entry
         company="Tooploox"
         timespan="03.2018&mdash;10.2020"
@@ -40,10 +40,9 @@ import OrgHeader from './OrgHeader.svelte'
         <ExpEntryList>
           <ExpEntry>
             <p slot="desc">
-              Web application for displaying and transforming macroeconomic time series.<br />
-              Frontend side: in charge of the infrastructure, CI/CD, choice of the technology, etc.<br />
-              Backend side: tracking down performance issues, performing load tests, writing new features, maintaining
-              the infrastructure.<br />
+              Web application for displaying and transforming macroeconomic time series.
+              <br />
+              In charge of the infrastructure, CI/CD, choice of technology on the frontend, collaboration with the client.
             </p>
             <li>TypeScript</li>
             <li>ReactJS, Redux, d3.js, SASS, Jest+Enzyme, Cypress</li>
@@ -71,8 +70,8 @@ import OrgHeader from './OrgHeader.svelte'
               Alexa integration for a smart oven and infrastructure optimizations for handling more users while being
               more cost effective.
               <br />
-              I was responsible for developing new features for the integration, load testing, writing proposals for
-              enhancements and implementing them.
+              Responsible for developing new features for the integration, load testing, writing proposals for
+              enhancements and implementing them, collaboration with the client.
             </p>
             <li>Python2</li>
             <li>Tornado, ELK Stack, Grafana</li>
@@ -105,12 +104,12 @@ import OrgHeader from './OrgHeader.svelte'
               News article reader and a cloud storage with a social network on top of it.<br />
               Developed features both in the frontend and the backend.<br />
             </p>
-            <li class="no-break">JavaScript</li>
-            <li class="no-break">VueJS, Vuex, SASS</li>
-            <li class="no-break">Python</li>
-            <li class="no-break">Django, Flask, Nginx, gevent</li>
-            <li class="no-break">PostgreSQL, Solr, Redis</li>
-            <li class="no-break">AWS EC2, S3, RDS, CW, etc.</li>
+            <li>JavaScript</li>
+            <li>VueJS, Vuex, SASS</li>
+            <li>Python</li>
+            <li>Django, Flask, Nginx, gevent</li>
+            <li>PostgreSQL, Solr, Redis</li>
+            <li>AWS EC2, S3, RDS, CW, etc.</li>
           </ExpEntry>
           <ExpEntry>
             <p slot="desc">An online game store.<br /> Bugfixing and developing new features.<br /></p>
@@ -125,22 +124,22 @@ import OrgHeader from './OrgHeader.svelte'
   </div>
 
   <aside class="grid grid-cols-1 auto-rows-min gap-8 print:block">
-    <div>
+    <div class='no-break'>
       <Header>Skills</Header>
       <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 print:grid-cols-4">
         <Skill name="Python" level={4.5} />
         <Skill name="Typescript" level={4} />
-        <Skill name="ReactJS" level={4} />
+        <Skill name="ReactJS" level={4.5} />
         <Skill name="Svelte" level={2.5} />
-        <Skill name="PostgreSQL" level={3} />
-        <Skill name="AWS" level={3.5} />
+        <Skill name="PostgreSQL" level={4} />
+        <Skill name="AWS" level={4} />
         <Skill name="English" level={4} label="B2+" />
         <Skill name="Teamwork" level={5} label="🚀" />
       </div>
     </div>
-    <div>
+    <div class='no-break'>
       <Header>Education</Header>
-      <ol class='text-lg text-gray-800'>
+      <ol class='text-lg text-gray-800 space-y-6'>
         <li>
           <Entry
             company="Wroclaw University of Science and Technology"
@@ -160,7 +159,7 @@ import OrgHeader from './OrgHeader.svelte'
   </aside>
 </main>
 
-<footer class="container px-8 mx-auto text-justify text-sm italic text-gray-600">
+<footer class="mt-6 container px-4 mx-auto text-justify text-sm italic text-gray-600">
   <p class="pt-2 border-t border-gray-400">
     I agree to the processing of personal data provided in this document for realising the recruitment process pursuant
     to the Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018, item 1000) and in agreement with
@@ -209,7 +208,6 @@ import OrgHeader from './OrgHeader.svelte'
       height: 100%;
       overflow: visible;
     }
-
     .grid.print\:block > * + * {
       margin-top: 2rem;
     }

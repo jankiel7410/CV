@@ -18,6 +18,7 @@ h4 {
 
 @page {
   size: A4;
+  margin: 10mm;
 }
 
 @media print {
@@ -33,4 +34,15 @@ h4 {
 }
 .break-after {
   break-after: always;
+}
+.no-break {
+  break-inside: avoid;
+}
+
+img.emoji {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
 }

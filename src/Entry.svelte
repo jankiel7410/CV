@@ -6,7 +6,7 @@
   export let sub: string
 </script>
 
-<li role="article" class='py-2'>
+<li role="article" class='space-y-2'>
   <OrgHeader {timespan}>
     {company}
   </OrgHeader>
