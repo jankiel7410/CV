@@ -1,5 +1,6 @@
 <script lang="ts">
     import Tailwind from './Tailwind.svelte'
+    import ExpEntryList from './ExpEntryList.svelte'
     import ExpEntry from './ExpEntry.svelte'
     import Header from './Header.svelte'
     import Skill from './Skill.svelte'
@@ -42,88 +43,105 @@
             
         </div>
     </aside>
+    <div>
+        <h2>Education</h2>
+        <ol>
+            <Entry company='Wroclaw University of Science and Technology' timespan='09.2014 &mdash; 02.2015' role='Master of science' sub=''></Entry>
+            <Entry company='Wroclaw University of Science and Technology' timespan='09.2011 &mdash; 06.2014' role='Bachelor of Science' sub=''></Entry>
+            <Entry company='Tooploox' timespan='03.2018 &mdash; 10.2020' role='Full-Stack Engineer' sub='Tooploox is a software house working mainly with clients based in US.'></Entry>
+        </ol>
+        <h2>Experience</h2>
+        <ol>
+            <Entry company='Tooploox' timespan='03.2018 &mdash; 10.2020' role='Full-Stack Engineer' sub='Tooploox is a software house working mainly with clients based in US.'>
+                <p>I was involved in the following projects:</p>
+                <ExpEntryList>
+                    <ExpEntry>
+                        <p slot="desc">
+                            Web application for displaying and transforming macroeconomic time series.<br>
+                            Frontend side: in charge of the infrastructure, CI/CD, choice of the technology, etc.<br>
+                            Backend side: tracking down performance issues, performing load tests, writing new features, maintaining the infrastructure.<br>
+                        </p>
+                        <li>TypeScript</li>
+                        <li>ReactJS, Redux, d3.js, SASS, Jest+Enzyme, Cypress</li>
+                        <li>Parcel, Gitlab CI</li>
+                        <li>Python3, Cython, Rust</li>
+                        <li>Flask, Nginx</li>
+                        <li>SQLAlchemy, PostgreSQL, ElasticSearch</li>
+                        <li>Docker, AWS ECS, S3, RDS, CW, Lambda, SQS, SES, etc.</li>
+                    </ExpEntry>
+                    <ExpEntry>
+                        <p slot="desc">
+                            Web application used by medical doctors in clinics to manage their patients' medical records, pending visits, prescriptions, lab tests etc.
+                        <br>
+                            I was responsible for the client-facing API, calling other services via gRPC and exposing a GraphQL API.
+                            Our team was also responsible for the frontend and design.
+                        </p>
 
-    <ol>
-        <Entry company='Tooploox' timespan='03.2018 &mdash; 10.2020' role='Full-Stack Engineer' sub='Tooploox is a software house working mainly with clients based in US.'>
-            <ExpEntry>
-                <p slot="desc">
-                    Web application for displaying and transforming macroeconomic time series.<br>
-                    Frontend side: in charge of the infrastructure, CI/CD, choice of the technology, etc.<br>
-                    Backend side: tracking down performance issues, performing load tests, writing new features, maintaining the infrastructure.<br>
-                </p>
-                    <li>TypeScript</li>
-                    <li>ReactJS, Redux, d3.js, SASS, Jest+Enzyme, Cypress</li>
-                    <li>Parcel, Gitlab CI</li>
-                    <li>Python3, Cython, Rust</li>
-                    <li>Flask, Nginx</li>
-                    <li>SQLAlchemy, PostgreSQL, ElasticSearch</li>
-                    <li>Docker, AWS ECS, S3, RDS, CW, Lambda, SQS, SES, etc.</li>
-            </ExpEntry>
-            <ExpEntry>
-                <p slot="desc">
-                    Web application used by medical doctors in clinics to manage their patients' medical records, pending visits, prescriptions, lab tests etc.
-                <br>
-                    I was responsible for the client-facing API, calling other services via gRPC and exposing a GraphQL API.
-                    Our team was also responsible for the frontend and design.
-                </p>
-                    <li>
-                        TypeScript
-                    </li>
-                    <li>
-                        NodeJS, GraphQL, gRPC, jest
-                    </li>
-                    <li>
-                        React, Apollo, styled-components, react-testing-library, Webpack
-                    </li>
-            </ExpEntry>
-            <ExpEntry>
-                <p slot="desc">
-                    Alexa integration for a smart oven and infrastructure optimizations for handling more users while being more cost effective. <br>
-                    I was responsible for developing new features for the integration, load testing, writing proposals for enhancements and implementing them.
-                </p>
-                <li>Python2</li>
-                <li>Tornado, ELK Stack, Grafana</li>
-                <li>AWS EC2, Lambda, DynamoDB, Kinesis, ElastiCache (Redis)</li>
-                <li>MZBench, locust</li>
-            </ExpEntry>
-            <ExpEntry>
-                <p slot="desc">
-                    An internal application for tracking leaves and project allocation.<br>
-                    Delivered features both on the frontend and the backend.
-                </p>
-                <li>TypeScript</li>
-                <li>ReactJS, Redux, jest+enzyme, SASS</li>
-                <li>Python3</li>
-                <li>Flask, SQLAlchemy, PostgreSQL</li>
-                <li>AWS Beanstalk, RDS, S3, etc.</li>
-            </ExpEntry>
-        </Entry>
-        
-        <Entry company='Techland' timespan='02.2015 &mdash; 01.2018' role='Full-Stack Engineer' sub='Techland is one of the biggest video game companies in Poland.'>
-            <ExpEntry>
-                <p slot="desc">
-                    News article reader with social network and cloud storage mixed in.<br>
-                    Developed features both in the frontend and the backend.<br>
-                </p>
-                <li class='no-break'>JavaScript</li>
-                <li class='no-break'>VueJS, Vuex, SASS</li>
-                <li class='no-break'>Python</li>
-                <li class='no-break'>Django, Flask, Nginx, gevent</li>
-                <li class='no-break'>PostgreSQL, Solr, Redis</li>
-                <li class='no-break'>AWS EC2, S3, RDS, CW, etc.</li>
-            </ExpEntry>
-            <ExpEntry>
-                <p slot="desc">
-                    An online game store.<br>
-                    Bugfixing and developing new features.<br>
-                </p>
-                    <li>Python</li>
-                    <li>Django, Nginx;</li>
-                    <li>Jinja2, JQuery, LESS</li>
-                    <li>MySQL, Solr</li>
-            </ExpEntry>
-        </Entry>
-    </ol>
+                        <li>
+                            TypeScript
+                        </li>
+                        <li>
+                            NodeJS, GraphQL, gRPC, jest
+                        </li>
+                        <li>
+                            React, Apollo, styled-components, react-testing-library, Webpack
+                        </li>
+                    </ExpEntry>
+                    <ExpEntry>
+                        <p slot="desc">
+                            Alexa integration for a smart oven and infrastructure optimizations for handling more users while being more cost effective. <br>
+                            I was responsible for developing new features for the integration, load testing, writing proposals for enhancements and implementing them.
+                        </p>
+                        <li>Python2</li>
+                        <li>Tornado, ELK Stack, Grafana</li>
+                        <li>AWS EC2, Lambda, DynamoDB, Kinesis, ElastiCache (Redis)</li>
+                        <li>MZBench, locust</li>
+                    </ExpEntry>
+                    <ExpEntry>
+                        <p slot="desc">
+                            An internal application for tracking leaves and project allocation.<br>
+                            Delivered features both on the frontend and the backend.
+                        </p>
+                        <li>TypeScript</li>
+                        <li>ReactJS, Redux, jest+enzyme, SASS</li>
+                        <li>Python3</li>
+                        <li>Flask, SQLAlchemy, PostgreSQL</li>
+                        <li>AWS Beanstalk, RDS, S3, etc.</li>
+                    </ExpEntry>
+                </ExpEntryList>
+            </Entry>
+            
+            <Entry company='Techland' timespan='02.2015 &mdash; 01.2018' role='Full-Stack Engineer' sub='Techland is one of the biggest video game companies in Poland.'>
+
+                <p>I was involved in the following projects:</p>
+                <ExpEntryList>
+                    <ExpEntry>
+                        <p slot="desc">
+                            News article reader and a cloud storage with a social network on top of it.<br>
+                            Developed features both in the frontend and the backend.<br>
+                        </p>
+                        <li class='no-break'>JavaScript</li>
+                        <li class='no-break'>VueJS, Vuex, SASS</li>
+                        <li class='no-break'>Python</li>
+                        <li class='no-break'>Django, Flask, Nginx, gevent</li>
+                        <li class='no-break'>PostgreSQL, Solr, Redis</li>
+                        <li class='no-break'>AWS EC2, S3, RDS, CW, etc.</li>
+                    </ExpEntry>
+                    <ExpEntry>
+                        <p slot="desc">
+                            An online game store.<br>
+                            Bugfixing and developing new features.<br>
+                        </p>
+                            <li>Python</li>
+                            <li>Django, Nginx;</li>
+                            <li>Jinja2, JQuery, LESS</li>
+                            <li>MySQL, Solr</li>
+                    </ExpEntry>
+                </ExpEntryList>
+            </Entry>
+            
+        </ol>
+    </div>
 </main>
 
 <footer class='container px-8 mx-auto text-justify text-sm italic text-gray-600'>
@@ -145,7 +163,6 @@
             "header" auto
             "bio" auto
             "content" auto / 1fr;
-        
     }
 
     main>header {
@@ -156,7 +173,7 @@
         grid-area: bio;
     }
 
-    main>ol {
+    main>div {
         grid-area: content;
     }
 
