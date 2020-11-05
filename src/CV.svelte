@@ -5,6 +5,7 @@
   import Header from './Header.svelte'
   import Skill from './Skill.svelte'
   import Entry from './Entry.svelte'
+import OrgHeader from './OrgHeader.svelte'
 </script>
 
 <Tailwind />
@@ -12,9 +13,8 @@
   <header>
     <h1 class="text-4xl md:text-6xl font-hairline leading-none">Michał Cymbalista</h1>
     <h2 class="text-2xl md:text-4xl mt-2 text-gray-700 font-light">Full-Stack Developer</h2>
-  </header>
-  <aside class="grid grid-cols-1 auto-rows-min gap-8 print:block">
-    <div>
+    <div class='my-4'>
+      <p><a href="https://jankiel.me">🔗 jankiel.me</a></p>
       <p><a href="mailto:michal.cymbalista@pm.me">📪 michal.cymbalista@pm.me</a></p>
       <p>📍 Wroclaw, Poland</p>
     </div>
@@ -27,44 +27,13 @@
         siberian cat Inka. 🐈<br />
       </p>
     </div>
-    <div>
-      <Header>Skills</Header>
-      <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 print:grid-cols-4">
-        <Skill name="Python" level={4.5} />
-        <Skill name="Typescript" level={4} />
-        <Skill name="ReactJS" level={4} />
-        <Skill name="Svelte" level={2.5} />
-        <Skill name="PostgreSQL" level={3} />
-        <Skill name="AWS" level={3.5} />
-        <Skill name="English" level={4} label="B2+" />
-        <Skill name="Teamwork" level={5} label="🚀" />
-      </div>
-    </div>
-  </aside>
+  </header>
   <div>
-    <h2>Education</h2>
-    <ol>
-      <Entry
-        company="Wroclaw University of Science and Technology"
-        timespan="09.2014 &mdash; 02.2015"
-        role="Master of science"
-        sub="" />
-      <Entry
-        company="Wroclaw University of Science and Technology"
-        timespan="09.2011 &mdash; 06.2014"
-        role="Bachelor of Science"
-        sub="" />
-      <Entry
-        company="Tooploox"
-        timespan="03.2018 &mdash; 10.2020"
-        role="Full-Stack Engineer"
-        sub="Tooploox is a software house working mainly with clients based in US." />
-    </ol>
-    <h2>Experience</h2>
+    <Header>Career</Header>
     <ol>
       <Entry
         company="Tooploox"
-        timespan="03.2018 &mdash; 10.2020"
+        timespan="03.2018&mdash;10.2020"
         role="Full-Stack Engineer"
         sub="Tooploox is a software house working mainly with clients based in US.">
         <p>I was involved in the following projects:</p>
@@ -126,7 +95,7 @@
 
       <Entry
         company="Techland"
-        timespan="02.2015 &mdash; 01.2018"
+        timespan="02.2015&mdash;01.2018"
         role="Full-Stack Engineer"
         sub="Techland is one of the biggest video game companies in Poland.">
         <p>I was involved in the following projects:</p>
@@ -154,6 +123,41 @@
       </Entry>
     </ol>
   </div>
+
+  <aside class="grid grid-cols-1 auto-rows-min gap-8 print:block">
+    <div>
+      <Header>Skills</Header>
+      <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 print:grid-cols-4">
+        <Skill name="Python" level={4.5} />
+        <Skill name="Typescript" level={4} />
+        <Skill name="ReactJS" level={4} />
+        <Skill name="Svelte" level={2.5} />
+        <Skill name="PostgreSQL" level={3} />
+        <Skill name="AWS" level={3.5} />
+        <Skill name="English" level={4} label="B2+" />
+        <Skill name="Teamwork" level={5} label="🚀" />
+      </div>
+    </div>
+    <div>
+      <Header>Education</Header>
+      <ol class='text-lg text-gray-800'>
+        <li>
+          <Entry
+            company="Wroclaw University of Science and Technology"
+            timespan="09.2014&mdash;02.2015"
+            role="Master of science"
+            sub="Computer Science and Technology. Thesis: Influence propagation in multilayer networks" />
+        </li>
+        <li>
+          <Entry
+            company="Wroclaw University of Science and Technology"
+            timespan="09.2011&mdash;02.2014"
+            role="Bachelor of Science"
+            sub="Applied Computer Science"/>
+        </li>
+      </ol>
+    </div>
+  </aside>
 </main>
 
 <footer class="container px-8 mx-auto text-justify text-sm italic text-gray-600">
