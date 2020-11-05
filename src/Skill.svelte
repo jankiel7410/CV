@@ -10,7 +10,7 @@
   $: circumference = 2 * 5 * Math.PI
 </script>
 
-<div class="text-gray-900">
+<div class='text-gray-900'>
   <div class="relative">
     <svg viewBox="0 0 12 12" preserveAspectRatio="xMidYMid meet">
       <circle
