@@ -5,12 +5,12 @@
   import Header from './Header.svelte'
   import Skill from './Skill.svelte'
   import Entry from './Entry.svelte'
-  import emoji from './emoji'
+  import { twemoji } from 'svelte-twemoji'
 </script>
 
 <Tailwind />
 <main class="container mx-auto mt-4 px-4 relative grid gap-4 md:gap-8 overflow-visible print:block">
-  <header use:emoji>
+  <header use:twemoji>
     <h1 class="text-4xl md:text-6xl font-hairline leading-none">Michał Cymbalista</h1>
     <h2 class="text-2xl md:text-4xl mt-2 text-gray-700 font-light">Full-Stack Developer</h2>
     <div class='my-4'>

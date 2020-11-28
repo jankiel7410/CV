@@ -38,8 +38,8 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0",
-    "tailwindcss": "^1.9.5",
-    "twemoji": "^13.0.1"
+    "svelte-twemoji": "^1.0.4",
+    "tailwindcss": "^1.9.5"
   },
   "lint-staged": {
     "*": "npx prettier --write"
