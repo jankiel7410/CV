@@ -11,9 +11,12 @@
   $: circumference = 2 * 5 * Math.PI
   const onPrint = () => tweenedLevel.set(level, {duration: 0})
   onMount(() => {
+    console.log(window)
+    if (typeof window !== 'undefined')
     window.addEventListener('beforeprint', onPrint)
   })
   onDestroy(() => {
+    if (typeof window !== 'undefined')
     window.removeEventListener('beforeprint', onPrint)
   })
 </script>

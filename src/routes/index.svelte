@@ -1,13 +1,17 @@
 <script lang="ts">
-  import Tailwind from './Tailwind.svelte'
-  import ExpEntryList from './ExpEntryList.svelte'
-  import ExpEntry from './ExpEntry.svelte'
-  import Header from './Header.svelte'
-  import Skill from './Skill.svelte'
-  import Entry from './Entry.svelte'
+  import Tailwind from '../Tailwind.svelte'
+  import ExpEntryList from '../ExpEntryList.svelte'
+  import ExpEntry from '../ExpEntry.svelte'
+  import Header from '../Header.svelte'
+  import Skill from '../Skill.svelte'
+  import Entry from '../Entry.svelte'
   import { twemoji } from 'svelte-twemoji'
 </script>
-
+<svelte:head>
+  <title>Michal Cymbalista</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" value=""/>
+</svelte:head>
 <Tailwind />
 <main class="container mx-auto mt-4 px-4 relative grid gap-4 md:gap-8 overflow-visible print:block">
   <header use:twemoji>
